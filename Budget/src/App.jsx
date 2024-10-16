@@ -1,6 +1,6 @@
 import React from 'react'
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
-import Dashboard, { dashboardLoader } from './pages/Dashboard';
+import Dashboard, { dashboardAction, dashboardLoader } from './pages/Dashboard';
 import Mainboard, {MainLoader}from './layout/Main';
 import { logout } from './action/Logout';
 import { ToastContainer } from 'react-toastify';
@@ -11,11 +11,14 @@ const router = createBrowserRouter([
     path: "/",
     element:<Mainboard/>,
     loader:MainLoader,
+    errorElement:<h1>error</h1>,
     children:[
       {
         path:"/",
         element:<Dashboard/>,
         loader:dashboardLoader,
+        errorElement:<h1>error</h1>,
+        action:dashboardAction
       },
       {
         path:"/logout",
