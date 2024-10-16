@@ -12,6 +12,7 @@ const Mainboard = () => {
   return (
     <div className="flex flex-col justify-between h-screen">
       <Nav username={username}/>
+      
       <main>
         <Outlet />
       </main>
