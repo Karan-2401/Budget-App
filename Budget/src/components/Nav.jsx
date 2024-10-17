@@ -4,7 +4,7 @@ import Logo from "../assets/Logo.png"
 import { useRef } from 'react'
 const Nav = ({username}) => {
   const x = useRef("")
-  console.log(username)  
+  
   return (
     <div className='px-2 py-4 sm:pr-8 flex items-center justify-between box-border'>
       <NavLink to="/" aria-label='go to home' className="inline-flex gap-2 items-center border-2 border-white w-auto p-3 rounded-2xl hover:border-blue-400 ">

@@ -12,6 +12,7 @@ export function dashboardLoader() {
 export async function dashboardAction({ request }) {
   const data = await request.formData();
   const { _action, ...value } = Object.fromEntries(data);
+  console.log(_action)
   switch (_action) {
     case "newUser":
       try {
@@ -20,6 +21,10 @@ export async function dashboardAction({ request }) {
       } catch (e) {
         throw new Error("There was a problem creating your account.");
       }
+      break;
+
+    case "addBudget":
+      return toast.success("Budget Created")
   }
 }
 const Dashboard = () => {

@@ -25,6 +25,7 @@ const AddBudgetForm = () => {
               className="border-slate-300 rounded border-2 lg:w-9/12 p-2 text-xs sm:text-sm lg:text-base focus:outline-none focus:border-blue-400 duration-150"
             />
           </div>
+          <input type="hidden" name="_action" value="addBudget"/>
           <button type="submit" className='border mt-5 p-1 sm:p-2 px-3 sm:px-4 lg:px-8 bg-black rounded hover:outline-4 hover:outline hover:outline-offset-2 duration-100 lg:w-3/5'>
             <span className='text-white text-xs sm:text-sm lg:text-base'>Create Budget</span>
           </button>
