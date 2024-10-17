@@ -4,20 +4,21 @@ import Dashboard, { dashboardAction, dashboardLoader } from './pages/Dashboard';
 import Mainboard, {MainLoader}from './layout/Main';
 import { logout } from './action/Logout';
 import { ToastContainer } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import Error from './components/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:<Mainboard/>,
     loader:MainLoader,
-    errorElement:<h1>error</h1>,
+    errorElement:<Error/>,
     children:[
       {
         path:"/",
         element:<Dashboard/>,
         loader:dashboardLoader,
-        errorElement:<h1>error</h1>,
+        errorElement:<Error/>,
         action:dashboardAction
       },
       {

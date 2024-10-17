@@ -1,6 +1,6 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 import { fetchData } from "../helper";
-import Nav from "../Navbar/Nav";
+import Nav from "../components/Nav";
 import img from "../assets/img.jpg"
 export function MainLoader() {
   const username = fetchData("username");
