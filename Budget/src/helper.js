@@ -1,5 +1,5 @@
 const generateRandomColor = ()=>{
-    const existingBudgetLength = fetchData("budgets").lenght ?? 0;
+    const existingBudgetLength = fetchData("budgets")?.lenght ?? 0;
     return `${existingBudgetLength *34} 65% 50%`
 }
 
