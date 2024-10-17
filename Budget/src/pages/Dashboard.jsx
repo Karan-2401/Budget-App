@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { fetchData } from "../helper";
 import Intro from "../components/Intro";
 import { toast } from "react-toastify";
+import AddBudgetForm from "../components/AddBudgetForm";
 
 export function dashboardLoader(){
     const username =fetchData("username");
@@ -21,10 +22,23 @@ export async function dashboardAction({request}) {
   }
 }
 const Dashboard = () => {
-    const {username} = useLoaderData()
+    const {username, budget} = useLoaderData()
   return (
     <>
-      {username ? (<p>{username}</p>) : <Intro />  }
+      {username ? (
+        <div className="flex flex-col gap-4">
+          <h1 className='text-xl sm:text-3xl lg:text-5xl font-bold'>Welcome Back, <span className='text-blue-400'>{username}</span></h1>
+          <div>
+
+            <div>
+              <div>
+                <AddBudgetForm/>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      ) : <Intro />  }
     </>
   )
 }
