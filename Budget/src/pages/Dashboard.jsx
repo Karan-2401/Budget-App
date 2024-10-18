@@ -6,13 +6,13 @@ import AddBudgetForm from "../components/AddBudgetForm";
 
 export function dashboardLoader() {
   const username = fetchData("username");
-  return { username };
+  const bug = fetchData("budgets");
+  return { username, bug };
 }
-
 export async function dashboardAction({ request }) {
   const data = await request.formData();
   const { _action, ...value } = Object.fromEntries(data);
-  console.log(_action)
+  console.log(_action);
   switch (_action) {
     case "newUser":
       try {
@@ -24,20 +24,20 @@ export async function dashboardAction({ request }) {
       break;
 
     case "addBudget":
-      try{
+      try {
         createBudget({
-          name:value.newBudget,
-          amount:value.newBudgetAmount
+          name: value.newBudget,
+          amount: value.newBudgetAmount,
         });
-        return toast.success("Budget Created")
-      }catch(e){
-        throw new Error("There is problem in creating this budget.")
+        return toast.success("Budget Created");
+      } catch (e) {
+        throw new Error("There is problem in creating this budget.");
       }
-      
   }
 }
 const Dashboard = () => {
-  const { username, budget } = useLoaderData();
+  const { username, bug } = useLoaderData();
+
   return (
     <>
       {username ? (
@@ -48,7 +48,9 @@ const Dashboard = () => {
           <div>
             <div>
               <div>
+               
                 <AddBudgetForm />
+                
               </div>
             </div>
           </div>
