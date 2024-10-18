@@ -15,7 +15,7 @@ const AddBudgetForm = () => {
   },[isSubmitting])
 
   return (
-    <div className="p-3 mx-1 sm:mx-3  sm:w-1/3  border-2 rounded-lg shadow-md">
+    <div className="p-3 mx-1 sm:mx-3  sm:w-1/3 border-2 rounded-lg shadow-md">
       <div className="border-black border-dashed border-2 rounded-lg p-3 flex flex-col gap-4">
         <h1 className="sm:text-xl lg:text-3xl font-bold">
           Create Budget

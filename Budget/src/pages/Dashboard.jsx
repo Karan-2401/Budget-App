@@ -49,7 +49,7 @@ const Dashboard = () => {
           <div>
             <div>
               <div>
-               
+                
                 <AddBudgetForm />
                 {bug.length >=1 ? <AddExpenseForm budgets={bug}/> : `` }
               </div>
