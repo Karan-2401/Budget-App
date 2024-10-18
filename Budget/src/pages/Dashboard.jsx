@@ -3,6 +3,7 @@ import { createBudget, fetchData } from "../helper";
 import Intro from "../components/Intro";
 import { toast } from "react-toastify";
 import AddBudgetForm from "../components/AddBudgetForm";
+import AddExpenseForm from "../components/AddExpenseForm";
 
 export function dashboardLoader() {
   const username = fetchData("username");
@@ -37,7 +38,7 @@ export async function dashboardAction({ request }) {
 }
 const Dashboard = () => {
   const { username, bug } = useLoaderData();
-
+  console.log(bug)
   return (
     <>
       {username ? (
@@ -50,7 +51,7 @@ const Dashboard = () => {
               <div>
                
                 <AddBudgetForm />
-                
+                {bug.length >=1 ? <AddExpenseForm budgets={bug}/> : `` }
               </div>
             </div>
           </div>

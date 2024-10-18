@@ -12,7 +12,9 @@ const Intro = () => {
             <Form method='post'>
               <input type="text" name='username' placeholder='Enter Your Name...' required className='border-slate-300 rounded border-2 w-6/12 md:w-8/12 lg:w-9/12 p-2 text-xs sm:text-sm lg:text-base focus:outline-none focus:border-blue-400 duration-150'/>
               <input type="hidden" name="_action" value="newUser" />
-              <br/><button className='border mt-5 p-1 sm:p-2 px-3 sm:px-4 lg:px-8 bg-black rounded hover:outline-4 hover:outline hover:outline-offset-2 duration-100'>
+              <br/><button className='border mt-5 p-1 sm:p-2 px-3 sm:px-4 lg:px-8 bg-black rounded hover:outline-4 hover:outline hover:outline-offset-2 duration-100' onClick={()=>{
+                localStorage.setItem("budgets",JSON.stringify([]))
+              }}>
                 <span className='text-white text-xs sm:text-sm lg:text-base'>Create Account</span>
                 </button>
             </Form>
